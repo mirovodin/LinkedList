@@ -1,0 +1,4 @@
+language: swift
+osx_image: xcode11.1
+script:
+  - xcodebuild -scheme LinkedList -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=13.1,name=iPhone 11' build test
