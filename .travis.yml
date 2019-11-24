@@ -1,4 +1,8 @@
 language: swift
 osx_image: xcode11.1
+install:
+  - gem install slather
 script:
   - xcodebuild -scheme LinkedList -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=13.1,name=iPhone 11' build test
+  - slather 
+  - bash <(curl -s https://codecov.io/bash) -f ./cobertura.xml
